@@ -1930,12 +1930,12 @@
       "ApiBasicCredential": {
         "type": "object",
         "properties": {
-          "PassRfid": {
+          "passRfid": {
             "pattern": "^[A-Fa-f0-9]{10}$",
             "type": "string",
             "nullable": true
           },
-          "PassName": {
+          "passName": {
             "type": "string",
             "nullable": true
           }
@@ -1944,54 +1944,54 @@
       },
       "ApiDeviceModel": {
         "required": [
-          "DeviceDefinition",
-          "DeviceSerialNumber",
-          "LocationId",
-          "Name",
-          "Region"
+          "deviceDefinition",
+          "deviceSerialNumber",
+          "locationId",
+          "name",
+          "region"
         ],
         "type": "object",
         "properties": {
-          "Id": {
+          "id": {
             "type": "integer",
             "format": "int64"
           },
-          "Name": {
+          "name": {
             "maxLength": 128,
             "minLength": 0,
             "pattern": "^[a-zA-Z0-9-_]*$",
             "type": "string"
           },
-          "DeviceSerialNumber": {
+          "deviceSerialNumber": {
             "maxLength": 128,
             "minLength": 0,
             "pattern": "^[a-zA-Z0-9-_]*$",
             "type": "string"
           },
-          "DeviceDefinition": {
+          "deviceDefinition": {
             "maxLength": 128,
             "minLength": 1,
             "pattern": "^[a-zA-Z0-9-_,. ]*$",
             "type": "string"
           },
-          "Region": {
+          "region": {
             "maxLength": 5,
             "minLength": 0,
             "pattern": "^[a-zA-Z]*$",
             "type": "string"
           },
-          "LocationId": {
+          "locationId": {
             "maximum": 18446744073709551615,
             "minimum": 1,
             "type": "integer",
             "format": "int64"
           },
-          "RecordCreatedDate": {
+          "recordCreatedDate": {
             "type": "string",
             "description": "Datetime indicating when the record was created",
             "format": "date-time"
           },
-          "RecordLastEditDate": {
+          "recordLastEditDate": {
             "type": "string",
             "description": "Datetime indicating when the record was last edited",
             "format": "date-time"
@@ -2002,63 +2002,63 @@
       },
       "ApiItemModel": {
         "required": [
-          "TagEpc"
+          "tagEpc"
         ],
         "type": "object",
         "properties": {
-          "Id": {
+          "id": {
             "type": "integer",
             "description": "Primary key for Item.",
             "format": "int64"
           },
-          "TagEpc": {
+          "tagEpc": {
             "maxLength": 512,
             "minLength": 0,
             "type": "string",
             "description": "The unique identifier provided  by the tag on the item.\r\nThis is set to 512 because that is what our firmware can handle,\r\nand we may potentially need to handle values that long."
           },
-          "ProductId": {
+          "productId": {
             "type": "integer",
             "description": "Id value for this Item's product.",
             "format": "int64"
           },
-          "Batch": {
+          "batch": {
             "maxLength": 256,
             "minLength": 0,
             "type": "string",
             "description": "Batch value that the Item was produced in.",
             "nullable": true
           },
-          "Serial": {
+          "serial": {
             "maxLength": 256,
             "minLength": 0,
             "type": "string",
             "description": "The unique serialized number used to identify this Item.",
             "nullable": true
           },
-          "ExpirationDate": {
+          "expirationDate": {
             "type": "string",
             "description": "The date that the Item expires.",
             "nullable": true
           },
-          "DeviceId": {
+          "deviceId": {
             "type": "integer",
             "description": "Foreign key Id of the Device that read the Item.",
             "format": "int64",
             "nullable": true
           },
-          "AliasId": {
+          "aliasId": {
             "type": "integer",
             "description": "Foreign key Id of the Alias that read the Item.",
             "format": "int64",
             "nullable": true
           },
-          "RecordCreatedDate": {
+          "recordCreatedDate": {
             "type": "string",
             "description": "Datetime indicating when the record was created",
             "format": "date-time"
           },
-          "RecordLastEditDate": {
+          "recordLastEditDate": {
             "type": "string",
             "description": "Datetime indicating when the record was last edited",
             "format": "date-time"
@@ -2069,14 +2069,14 @@
       },
       "ApiKeyModel": {
         "required": [
-          "DisplayName"
+          "displayName"
         ],
         "type": "object",
         "properties": {
-          "DisplayName": {
+          "displayName": {
             "type": "string"
           },
-          "AccessKey": {
+          "accessKey": {
             "type": "string",
             "nullable": true
           }
@@ -2085,78 +2085,78 @@
       },
       "ApiLocationModel": {
         "required": [
-          "Address",
-          "Name"
+          "address",
+          "name"
         ],
         "type": "object",
         "properties": {
-          "Id": {
+          "id": {
             "type": "integer",
             "format": "int64"
           },
-          "Name": {
+          "name": {
             "maxLength": 256,
             "minLength": 0,
             "type": "string"
           },
-          "AccountId": {
+          "accountId": {
             "type": "integer",
             "format": "int64",
             "nullable": true
           },
-          "Address": {
+          "address": {
             "maxLength": 256,
             "minLength": 0,
             "type": "string"
           },
-          "City": {
+          "city": {
             "maxLength": 128,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "StateProvince": {
+          "stateProvince": {
             "maxLength": 16,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "PostalCode": {
+          "postalCode": {
             "maxLength": 16,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Country": {
+          "country": {
             "maxLength": 128,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "ContactName": {
+          "contactName": {
             "maxLength": 256,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "ContactPhone": {
+          "contactPhone": {
             "type": "string",
             "format": "tel",
             "nullable": true
           },
-          "ContactEmail": {
+          "contactEmail": {
             "maxLength": 128,
             "minLength": 0,
             "pattern": "^[a-zA-Z0-9.!#$%&'*+\\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$",
             "type": "string",
             "nullable": true
           },
-          "RecordCreatedDate": {
+          "recordCreatedDate": {
             "type": "string",
             "description": "Datetime indicating when the record was created",
             "format": "date-time"
           },
-          "RecordLastEditDate": {
+          "recordLastEditDate": {
             "type": "string",
             "description": "Datetime indicating when the record was last edited",
             "format": "date-time"
@@ -2167,25 +2167,25 @@
       },
       "ApiParLevelGroupModel": {
         "required": [
-          "Id",
-          "LocationIdList",
-          "Name",
-          "ParLevels"
+          "id",
+          "LocationIds",
+          "name",
+          "parLevels"
         ],
         "type": "object",
         "properties": {
-          "Id": {
+          "id": {
             "type": "integer",
             "description": "Unique identifier of par level group",
             "format": "int64"
           },
-          "Name": {
+          "name": {
             "maxLength": 256,
             "minLength": 0,
             "type": "string",
             "description": "Name of par level group"
           },
-          "LocationIdList": {
+          "LocationIds": {
             "type": "array",
             "items": {
               "type": "integer",
@@ -2193,17 +2193,12 @@
             },
             "description": "Ids of locations that have been assigned to par level group"
           },
-          "ParLevels": {
+          "parLevels": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/ApiParLevelModel"
             },
             "description": "Par levels that have been assigned to par level group"
-          },
-          "LocationIds": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
           }
         },
         "additionalProperties": false,
@@ -2211,29 +2206,24 @@
       },
       "ApiParLevelModel": {
         "required": [
-          "ProductCode"
+          "productCode"
         ],
         "type": "object",
         "properties": {
-          "ProductCode": {
+          "productCode": {
             "maxLength": 256,
             "minLength": 0,
             "type": "string",
             "description": "Product code that par level is for"
           },
-          "ProductId": {
-            "type": "integer",
-            "description": "Unique identifier for product",
-            "format": "int64"
-          },
-          "Min": {
+          "min": {
             "maximum": 30000,
             "minimum": 0,
             "type": "integer",
             "description": "Minimum value for par level",
             "format": "int32"
           },
-          "Max": {
+          "max": {
             "maximum": 30000,
             "minimum": 0,
             "type": "integer",
@@ -2246,42 +2236,42 @@
       },
       "ApiProductModel": {
         "required": [
-          "Code",
-          "Name"
+          "code",
+          "name"
         ],
         "type": "object",
         "properties": {
-          "Id": {
+          "id": {
             "type": "integer",
             "description": "Unique identifier of product",
             "format": "int64"
           },
-          "Name": {
+          "name": {
             "maxLength": 256,
             "minLength": 0,
             "type": "string",
             "description": "Name of product"
           },
-          "Code": {
+          "code": {
             "maxLength": 256,
             "minLength": 0,
             "type": "string",
             "description": "Unique code of product"
           },
-          "Active": {
+          "active": {
             "type": "boolean",
             "description": "Bool indicating if product is active"
           },
-          "IsRfid": {
+          "isRfid": {
             "type": "boolean",
             "description": "Bool indicating if this product is an RFID product"
           },
-          "RecordCreatedDate": {
+          "recordCreatedDate": {
             "type": "string",
             "description": "Datetime indicating when the record was created",
             "format": "date-time"
           },
-          "RecordLastEditDate": {
+          "recordLastEditDate": {
             "type": "string",
             "description": "Datetime indicating when the record was last edited",
             "format": "date-time"
@@ -2292,60 +2282,60 @@
       },
       "ApiUserModel": {
         "required": [
-          "BrowserSpecifiedTimeZone",
-          "Email",
-          "FirstName",
-          "LastName"
+          "browserSpecifiedTimeZone",
+          "email",
+          "firstName",
+          "lastName"
         ],
         "type": "object",
         "properties": {
-          "Id": {
+          "id": {
             "type": "integer",
             "format": "int64"
           },
-          "FirstName": {
+          "firstName": {
             "maxLength": 128,
             "minLength": 0,
             "type": "string"
           },
-          "LastName": {
+          "lastName": {
             "maxLength": 128,
             "minLength": 0,
             "type": "string"
           },
-          "TimeZoneId": {
+          "timeZoneId": {
             "type": "string",
             "nullable": true
           },
-          "Email": {
+          "email": {
             "maxLength": 128,
             "minLength": 0,
             "pattern": "^[a-zA-Z0-9.!#$%&'*+\\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$",
             "type": "string",
             "format": "email"
           },
-          "PhoneNumber": {
+          "phoneNumber": {
             "type": "string",
             "nullable": true
           },
-          "BrowserSpecifiedTimeZone": {
+          "browserSpecifiedTimeZone": {
             "type": "boolean"
           },
-          "LastLoginDate": {
+          "lastLoginDate": {
             "type": "string",
             "format": "date-time"
           },
-          "Active": {
+          "active": {
             "type": "boolean"
           },
-          "RolesList": {
+          "Roles": {
             "type": "array",
             "items": {
               "type": "string"
             },
             "nullable": true
           },
-          "LocationsList": {
+          "Locations": {
             "type": "array",
             "items": {
               "type": "integer",
@@ -2353,20 +2343,8 @@
             },
             "nullable": true
           },
-          "BasicCredential": {
+          "basicCredential": {
             "$ref": "#/components/schemas/ApiBasicCredential"
-          },
-          "Roles": {
-            "type": "string",
-            "description": "Roles field for searching via Dynamic Linq\r\nNot returned in the API",
-            "nullable": true,
-            "readOnly": true
-          },
-          "Locations": {
-            "type": "string",
-            "description": "Locations field for searching via Dynamic Linq\r\nNot Returned in the API",
-            "nullable": true,
-            "readOnly": true
           }
         },
         "additionalProperties": false,
